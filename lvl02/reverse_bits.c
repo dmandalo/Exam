@@ -3,13 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_bits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 17:32:24 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 17:36:23 by dmandalo         ###   ########.fr       */
+/*   Updated: 2019/11/01 17:48:38 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned char reverse_bits(unsigned char octet)
 {
-	(((octet >> 0) & 1) << 7) | \
+	return  (((octet >> 0) & 1) << 7) | \
+			(((octet >> 1) & 1) << 6) | \
+			(((octet >> 2) & 1) << 5) | \
+			(((octet >> 3) & 1) << 4) | \
+			(((octet >> 4) & 1) << 3) | \
+			(((octet >> 5) & 1) << 2) | \
+			(((octet >> 6) & 1) << 1) | \
+			(((octet >> 7) & 1) << 0);
+}
