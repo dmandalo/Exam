@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 17:32:24 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 17:48:38 by dmandalo         ###   ########.fr       */
+/*   Created: 2019/11/01 18:53:41 by dmandalo          #+#    #+#             */
+/*   Updated: 2019/11/01 19:06:13 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned char reverse_bits(unsigned char octet)
 {
-	return  (((octet >> 0) & 1) << 7) | \
+		return  (((octet >> 0) & 1) << 7) | \
 			(((octet >> 1) & 1) << 6) | \
 			(((octet >> 2) & 1) << 5) | \
 			(((octet >> 3) & 1) << 4) | \

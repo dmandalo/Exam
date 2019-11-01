@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 16:12:10 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 16:18:17 by dmandalo         ###   ########.fr       */
+/*   Created: 2019/11/01 18:29:35 by dmandalo          #+#    #+#             */
+/*   Updated: 2019/11/01 18:31:53 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 int		main(int argc, char *argv[])
 {
 	int	i;
-
 	i = 0;
+
 	if (argc > 1)
 	{
-		while(argv[argc - 1][i])
-			write(1, &argv[argc - 1][i++], 1);
+		while (argv[1][i])
+			write(1, &argv[1][i++], 1);
 	}
-	write(1, "\n", 1);
-	return (0);
 }
