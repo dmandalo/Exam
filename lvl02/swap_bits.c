@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   swap_bits.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 20:04:48 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 20:06:59 by dmandalo         ###   ########.fr       */
+/*   Updated: 2019/11/06 16:03:31 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned char swap_bits(unsigned char octet)
 {
-	return ((octet >> 4 | octet << 4);
+	return ((octet >> 4) | (octet << 4));
 }

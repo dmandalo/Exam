@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   is_power_of_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 19:59:58 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 20:04:00 by dmandalo         ###   ########.fr       */
+/*   Updated: 2019/11/06 16:02:50 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		is_power_of_2(unsigned int n)
 {
-	return	((n & (-n)) == n ? 1 : 0);
+	return ((n & (-n)) == n ? 1 : 0);
 }
