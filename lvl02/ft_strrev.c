@@ -1,15 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_bits.c                                     :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 20:04:12 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 20:08:52 by dmandalo         ###   ########.fr       */
+/*   Created: 2019/11/06 16:01:04 by dmandalo          #+#    #+#             */
+/*   Updated: 2019/11/06 16:01:06 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned char reverse_bits(unsigned char octet);
+char		*ft_strrev(char *str)
 {
-	return (((octet >> 0) & 1) << 7) | \
+	int		i;
+	int		len;
+	char	tmp;
+
+	len = 0;
+	while (str[len])
+		len += 1;
+	i = -1;
+	while (++i < --len)
+	{
+		tmp = str[i];
+		str[i] = str[len];
+		str[len] = tmp;
+	}
+	return (str);
+}

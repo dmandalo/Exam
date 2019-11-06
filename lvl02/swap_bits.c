@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 19:04:01 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 19:05:03 by dmandalo         ###   ########.fr       */
+/*   Created: 2019/11/01 20:04:48 by dmandalo          #+#    #+#             */
+/*   Updated: 2019/11/01 20:06:59 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned char swap_bits(unsigned char octet)
 {
-	return (octet >> 4) | (octet << 4);
+	return ((octet >> 4 | octet << 4);
 }

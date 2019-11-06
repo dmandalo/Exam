@@ -1,15 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_bits.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 20:04:12 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 20:08:52 by dmandalo         ###   ########.fr       */
+/*   Created: 2019/11/06 15:31:51 by dmandalo          #+#    #+#             */
+/*   Updated: 2019/11/06 15:56:25 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned char reverse_bits(unsigned char octet);
+int		ft_strcmp(char *s1, char *s2)
 {
-	return (((octet >> 0) & 1) << 7) | \
+	while (*s1 && (*s1 == *s2))
+	{
+		s1 += 1;
+		s2 += 2;
+	}
+	return (*s1 - *s2);
+}

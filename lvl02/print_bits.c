@@ -1,15 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_bits.c                                     :+:      :+:    :+:   */
+/*   print_bits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 20:04:12 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 20:08:52 by dmandalo         ###   ########.fr       */
+/*   Created: 2019/11/06 15:57:52 by dmandalo          #+#    #+#             */
+/*   Updated: 2019/11/06 15:57:54 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned char reverse_bits(unsigned char octet);
+#include <unistd.h>
+
+void	print_bits(unsigned char octet)
 {
-	return (((octet >> 0) & 1) << 7) | \
+	int				i;
+	unsigned char	bit;
+
+	i = 8;
+	while (i--)
+	{
+		bit = (octet >> i & 1) + '0';
+		write(1, &bit, 1);
+	}
+}

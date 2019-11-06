@@ -1,15 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_bits.c                                     :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 20:04:12 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 20:08:52 by dmandalo         ###   ########.fr       */
+/*   Created: 2019/11/06 16:00:41 by dmandalo          #+#    #+#             */
+/*   Updated: 2019/11/06 16:00:43 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned char reverse_bits(unsigned char octet);
+int		max(int *tab, unsigned int len)
 {
-	return (((octet >> 0) & 1) << 7) | \
+	int		i;
+	int		max_value;
+
+	if (!tab)
+		return (0);
+	i = 0;
+	while (len--)
+	{
+		if (tab[i] > tab[i + 1])
+			max_value = tab[i];
+		i += 1;
+	}
+	return (max_value);
+}
