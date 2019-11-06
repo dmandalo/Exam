@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 17:04:26 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 17:08:59 by dmandalo         ###   ########.fr       */
+/*   Updated: 2019/11/06 16:20:57 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ void	ft_swap(int	*a, int *b)
 {
 	int	temp;
 
-	*temp = *a;
+	temp = *a;
 	*a = *b;
 	*b = temp;
 }
