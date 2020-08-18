@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmandalo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 18:36:26 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/01 18:40:21 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/08/18 17:54:16 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *s1, char *s2)
+char    *ft_strcpy(char *s1, char *s2)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while(s2[i])
+	while (s2[i])
 	{
 		s1[i] = s2[i];
-		i += 1;
+		i++;
 	}
-	s1[i] = '\0';
+	s1[i] = s2[i];
 	return (s1);
 }
