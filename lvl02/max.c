@@ -6,23 +6,19 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 16:00:41 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/06 16:00:43 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/08/26 17:46:09 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		max(int *tab, unsigned int len)
 {
-	int		i;
-	int		max_value;
+	int	max;
 
-	if (!tab)
+	if (!len)
 		return (0);
-	i = 0;
+	max = tab[--len];
 	while (len--)
-	{
-		if (tab[i] > tab[i + 1])
-			max_value = tab[i];
-		i += 1;
-	}
-	return (max_value);
+		if (tab[len] > max)
+			max = tab[len];
+	return (max);
 }

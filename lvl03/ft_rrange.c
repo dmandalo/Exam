@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   ft_rrange.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:57:52 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/08/26 18:01:56 by dmandalo         ###   ########.fr       */
+/*   Created: 2020/08/26 18:52:54 by dmandalo          #+#    #+#             */
+/*   Updated: 2020/08/26 18:52:57 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	print_bits(unsigned char octet)
+int		*ft_rrange(int start, int end)
 {
-	int				i;
-	unsigned char	bit;
+	int		*rrange;
+	int		i;
 
-	i = 8;
-	while (i--)
+	if (start > end)
+		rrange = (int *)malloc(sizeof(int) * (start - end) + 1);
+	else
+		rrange = (int *)malloc(sizeof(int) * (end - start) + 1);
+	i = 0;
+	while (start != end)
 	{
-		bit = (octet >> i & 1) + '0';
-		write(1, &bit, 1);
+		rrange[i++] = end;
+		end -= (start > end) ? -1 : 1;
 	}
+	rrange[i] = end;
+	return (rrange);
 }

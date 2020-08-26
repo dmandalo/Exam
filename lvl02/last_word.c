@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   last_word.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:57:52 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/08/26 18:01:56 by dmandalo         ###   ########.fr       */
+/*   Created: 2020/08/26 17:10:53 by dmandalo          #+#    #+#             */
+/*   Updated: 2020/08/26 17:17:34 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_bits(unsigned char octet)
+int		ft_isblank(char c)
 {
-	int				i;
-	unsigned char	bit;
+	if (c == ' ' || c == '\t')
+		return (1);
+	return (0);
+}
 
-	i = 8;
-	while (i--)
+int		main(int argc, char *argv[])
+{
+	if (argc == 2)
 	{
-		bit = (octet >> i & 1) + '0';
-		write(1, &bit, 1);
+		while (*argv[1])
+			argv[1]++;
+		argv[1]--;
+		while (ft_isblank(*argv[1]))
+			argv[1]--;
+		while (*argv[1] && !ft_isblank(*argv[1]))
+			argv[1]--;
+		argv[1]++;
+		while (*argv[1] && !ft_isblank(*argv[1]))
+			write(1, argv[1]++, 1);
 	}
+	write(1, "\n", 1);
+	return (0);
 }

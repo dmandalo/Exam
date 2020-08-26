@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   wdmatch.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:57:52 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/08/26 18:01:56 by dmandalo         ###   ########.fr       */
+/*   Created: 2020/08/26 18:23:51 by dmandalo          #+#    #+#             */
+/*   Updated: 2020/08/26 18:23:53 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_bits(unsigned char octet)
+void	wdmatch(char *s1, char *s2)
 {
-	int				i;
-	unsigned char	bit;
+	int len = 0;
+	int i = 0;
 
-	i = 8;
-	while (i--)
-	{
-		bit = (octet >> i & 1) + '0';
-		write(1, &bit, 1);
-	}
+	while (s1[len])
+		++len;
+	while (*s2 && i < len)
+		(*s2++ == s1[i]) ? ++i : 0;
+	if (i == len)
+		write(1, s1, len);
+}
+
+int		main(int ac, char **av)
+{
+	if (ac == 3)
+		wdmatch(av[1], av[2]);
+	write(1, "\n", 1);
+	return (0);
 }

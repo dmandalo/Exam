@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:57:52 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/08/26 18:01:56 by dmandalo         ###   ########.fr       */
+/*   Created: 2020/08/26 18:53:12 by dmandalo          #+#    #+#             */
+/*   Updated: 2020/08/26 18:53:14 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	print_bits(unsigned char octet)
+int		*ft_range(int start, int end)
 {
-	int				i;
-	unsigned char	bit;
+	int		*range;
+	int		i;
 
-	i = 8;
-	while (i--)
+	if (start > end)
+		range = (int *)malloc(sizeof(int) * (start - end) + 1);
+	else
+		range = (int *)malloc(sizeof(int) * (end - start) + 1);
+	i = 0;
+	while (start != end)
 	{
-		bit = (octet >> i & 1) + '0';
-		write(1, &bit, 1);
+		range[i++] = start;
+		start += (start > end) ? -1 : 1;
 	}
+	range[i] = start;
+	return (range);
 }

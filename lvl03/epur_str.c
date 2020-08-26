@@ -6,7 +6,7 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:27:06 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/07 18:14:02 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/08/13 16:37:45 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ int		main(int argc, char *argv[])
 		}
 	}
 	write(1, "\n", 1);
-   return (0);
+	return (0);
 }

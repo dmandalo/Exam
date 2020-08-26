@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   paramsum.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:57:52 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/08/26 18:01:56 by dmandalo         ###   ########.fr       */
+/*   Created: 2020/08/26 18:45:06 by dmandalo          #+#    #+#             */
+/*   Updated: 2020/08/26 18:46:30 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_bits(unsigned char octet)
+void	ft_putchar(char c)
 {
-	int				i;
-	unsigned char	bit;
+	write(1, &c, 1);
+}
 
-	i = 8;
-	while (i--)
-	{
-		bit = (octet >> i & 1) + '0';
-		write(1, &bit, 1);
-	}
+void	ft_putnbr(int n)
+{
+	if (n > 9)
+		ft_putnbr(n / 10);
+	ft_putchar(n % 10 +'0');
+}
+
+int		main(int argc, char *argv[])
+{
+	argv = 0;
+	ft_putnbr(argc - 1);
+	write(1, "\n", 1);
 }

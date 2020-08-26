@@ -6,11 +6,15 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 19:59:58 by dmandalo          #+#    #+#             */
-/*   Updated: 2019/11/06 16:02:50 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/08/26 17:36:27 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		is_power_of_2(unsigned int n)
 {
-	return ((n & (-n)) == n ? 1 : 0);
+	if (n == 0)
+		return (0);
+	while (n % 2 == 0) 
+		n /= 2;
+	return ((n == 1) ? 1 : 0);
 }

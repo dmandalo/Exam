@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bits.c                                       :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:57:52 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/08/26 18:01:56 by dmandalo         ###   ########.fr       */
+/*   Created: 2020/08/26 18:36:51 by dmandalo          #+#    #+#             */
+/*   Updated: 2020/08/26 18:38:08 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_list.h"
 
-void	print_bits(unsigned char octet)
+int		ft_list_size(t_list *begin_list)
 {
-	int				i;
-	unsigned char	bit;
+	int		i;
 
-	i = 8;
-	while (i--)
+	i = 0;
+	while (begin_list)
 	{
-		bit = (octet >> i & 1) + '0';
-		write(1, &bit, 1);
+		begin_list = begin_list->next;
+		++i;
 	}
+	return (i);
 }
