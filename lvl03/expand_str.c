@@ -6,7 +6,7 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 14:27:32 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/08/13 16:37:39 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/08/28 20:01:01 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		main(int argc, char *argv[])
 {
 	int	i;
-	int f;
+	int tmp;
 
 	i = 0;
 	if (argc == 2)
@@ -25,12 +25,12 @@ int		main(int argc, char *argv[])
 		while (argv[1][i])
 		{
 			if (argv[1][i] == ' ' || argv[1][i] == '\t')
-				f = 1;
+				tmp = 1;
 			if (!(argv[1][i] == ' ' || argv[1][i] == '\t'))
 			{
-				if (f)
+				if (tmp)
 					write(1, "   ", 3);
-				f = 0;
+				tmp = 0;
 					write(1, &argv[1][i], 1);
 			}
 			i += 1;
