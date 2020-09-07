@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   paramsum.c                                         :+:      :+:    :+:   */
+/*   hidenp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/26 18:45:06 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/09/07 18:04:34 by dmandalo         ###   ########.fr       */
+/*   Created: 2020/09/07 17:06:25 by dmandalo          #+#    #+#             */
+/*   Updated: 2020/09/07 17:06:27 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	hidenp(char *s1, char *s2)
 {
-	write(1, &c, 1);
+	while (*s2)
+		if (*s1 == *s2++)
+			s1++;
+	(*s1 == '\0') ? write(1, "1", 1) : write(1, "0", 1);
 }
 
-void	ft_putnbr(int n)
+int	main(int argc, char **argv)
 {
-	if (n > 9)
-		ft_putnbr(n / 10);
-	ft_putchar(n % 10 +'0');
-}
-
-int		main(int argc, char *argv[])
-{
-	argv = 0;
-	ft_putnbr(argc - 1);
+	if (argc == 3)
+		hidenp(argv[1], argv[2]);
 	write(1, "\n", 1);
+	return (0);
 }

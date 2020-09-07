@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   paramsum.c                                         :+:      :+:    :+:   */
+/*   pgcd.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/26 18:45:06 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/09/07 18:04:34 by dmandalo         ###   ########.fr       */
+/*   Created: 2020/09/07 17:10:59 by dmandalo          #+#    #+#             */
+/*   Updated: 2020/09/07 17:15:27 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+int		main(int argc, char const *argv[])
 {
-	write(1, &c, 1);
-}
+	int		nbr1;
+	int		nbr2;
 
-void	ft_putnbr(int n)
-{
-	if (n > 9)
-		ft_putnbr(n / 10);
-	ft_putchar(n % 10 +'0');
-}
-
-int		main(int argc, char *argv[])
-{
-	argv = 0;
-	ft_putnbr(argc - 1);
-	write(1, "\n", 1);
+	if (argc == 3)
+	{
+		if ((nbr1 = atoi(argv[1])) > 0 && (nbr2 = atoi(argv[2])) > 0)
+		{
+			while (nbr1 != nbr2)
+			{
+				if (nbr1 > nbr2)
+					nbr1 -= nbr2;
+				else
+					nbr2 -= nbr1;
+			}
+			printf("%d", nbr1);
+		}
+	}
+	printf("\n");
+	return (0);
 }

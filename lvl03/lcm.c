@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   paramsum.c                                         :+:      :+:    :+:   */
+/*   lcm.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/26 18:45:06 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/09/07 18:04:34 by dmandalo         ###   ########.fr       */
+/*   Created: 2020/09/07 17:31:32 by dmandalo          #+#    #+#             */
+/*   Updated: 2020/09/07 17:31:34 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+unsigned int    lcm(unsigned int a, unsigned int b)
 {
-	write(1, &c, 1);
-}
+    unsigned int    d;
 
-void	ft_putnbr(int n)
-{
-	if (n > 9)
-		ft_putnbr(n / 10);
-	ft_putchar(n % 10 +'0');
-}
-
-int		main(int argc, char *argv[])
-{
-	argv = 0;
-	ft_putnbr(argc - 1);
-	write(1, "\n", 1);
+    if (!a || !b)
+        return (0);
+    if (a > b)
+        d = (a / 2) + 1;
+    else
+        d = (b / 2) + 1;
+    while (!((a % d) == 0 && (b % d) == 0))
+        d--;
+    return (a * b / d);
 }
