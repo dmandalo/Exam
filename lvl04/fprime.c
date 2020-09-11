@@ -6,7 +6,7 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 15:31:43 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/09/10 15:31:45 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/09/11 15:21:53 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,23 @@
 int		main(int argc, char *argv[])
 {
 	int		i;
-	int		nbr;
+	int		tmp;
 
 	if (argc == 2)
 	{
 		i = 1;
-		nbr = atoi(argv[1]);
-		if (nbr == 1)
+		tmp = atoi(argv[1]);
+		if (tmp == 1)
 			printf("1");
-		while (nbr >= ++i)
+		while (tmp >= ++i)
 		{
-			if (nbr % i == 0)
+			if (tmp % i == 0)
 			{
 				printf("%d", i);
-				if (nbr == i)
+				if (tmp == i)
 					break ;
 				printf("*");
-				nbr /= i;
+				tmp /= i;
 				i = 1;
 			}
 		}

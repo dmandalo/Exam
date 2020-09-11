@@ -6,31 +6,38 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:41:13 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/09/10 17:41:28 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/09/11 16:15:34 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-#include <unistd.h>
+#include "list.h"
 
-t_list		*sort_list(t_list* lst, int (*cmp)(int, int))
+int ascending(int a, int b) 
 {
-	int		overflow;
-	t_list	*tmp;
+	return (a <= b);
+}
+void ft_swap(int *c, int *d)
+{
+	int temp;
+	temp = *c;
+	*c = *d;
+	*d = temp;
+}
 
-	tmp = lst;
-	while (lst->next != NULL)
+t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
+{
+	t_list *begin = lst;
+	t_list *future;
+	while(lst)
 	{
-		if (((*cmp)(lst->data, lst->next->data)) == 0)
+		future = lst->next;
+		while (future)
 		{
-			overflow = lst->data;
-			lst->data = lst->next->data;
-			lst->next->data = overflow;
-			lst = tmp;
+			if (!cmp(lst->data, future->data))
+				ft_swap(&lst->data, &future->data);
+			future = future->next;
 		}
-		else
-			lst = lst->next;
+		lst = lst->next;
 	}
-	lst = tmp;
-	return (lst);
+	return (begin);
 }

@@ -6,7 +6,7 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/11 15:04:18 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/09/11 15:16:13 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/09/11 15:36:11 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ char	*ft_itoa_base(int value, int base)
 {
 	char	*s;
 	long	n;
-	int		sign;
-	int		i;
+    int     i;
+	int		tmp;
 
 	n = (value < 0) ? -(long)value : value;
-	sign = (value < 0 && base == 10) ? -1 : 0;
-	i = (sign == -1) ? 2 : 1;
+	tmp = (value < 0 && base == 10) ? -1 : 0;
+	i = (tmp == -1) ? 2 : 1;
 	while ((n /= base) >= 1)
 		i++;
 	s = (char*)malloc(sizeof(char) * (i + 1));
 	s[i] = '\0';
 	n = (value < 0) ? -(long)value : value;
-	while (i-- + sign)
+	while (i-- + tmp)
 	{
 		s[i] = (n % base < 10) ? n % base + '0' : n % base + 'A' - 10;
 		n /= base;
