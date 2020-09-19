@@ -6,13 +6,13 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:14:44 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/09/11 14:49:33 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/09/19 17:15:03 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static int		print_last(const char *str, int tmp)
+static int		function(const char *str, int tmp)
 {
 	int			i;
 
@@ -40,7 +40,7 @@ int				main(int argc, char **argv)
 			tmp++;
 		tmp--;
 		while (tmp > 0)
-			tmp = print_last(argv[1], tmp);
+			tmp = function(argv[1], tmp);
 	}
 	write(1, "\n", 1);
 	return (0);
