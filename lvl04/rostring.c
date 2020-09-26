@@ -6,19 +6,19 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:28:58 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/09/26 14:57:00 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/09/26 15:36:37 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int main (int argc , char **argv)
+int main (int argc , char *argv[])
 {
 	int i;
 	int j;
 
     i = 0;
-	if (argc >= 2)
+	if (argc == 2)
 	{
 		
 			while (argv[1][i] && (argv[1][i] == ' ' || argv[1][i] == '\t'))
