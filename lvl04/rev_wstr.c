@@ -6,19 +6,19 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:14:44 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/10/01 15:47:59 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/10/01 18:01:52 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static int		function (const char *j, int tmp)
+ int	function (char *j, int tmp)
 {
-	int			i;
+	int	i;
 
+	i = 0;
 	while (tmp > 0 && (j[tmp] == ' ' || j[tmp] == '\t'))
 		tmp--;
-	i = 0;
 	while (i <= tmp && j[tmp - i] != ' ' && j[tmp - i] != '\t')
 		i++;
 	write(1, j + tmp - i + 1, i);
@@ -29,16 +29,16 @@ static int		function (const char *j, int tmp)
 	return (tmp - i);
 }
 
-int				main (int argc, char *argv[])
+int		main (int argc, char *argv[])
 {
-	int			i;
+	int	i;
 
 	if (argc == 2)
 	{
 		i = 0;
 		while (argv[1][i] != '\0')
-			i++;
-		i--;
+		i++;
+			i--;
 		while (i > 0)
 			i = function(argv[1], i);
 	}
