@@ -6,7 +6,7 @@
 /*   By: dmandalo <dmandalo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 21:10:35 by dmandalo          #+#    #+#             */
-/*   Updated: 2020/10/06 17:46:35 by dmandalo         ###   ########.fr       */
+/*   Updated: 2020/10/08 12:44:54 by dmandalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	while (i < argc)
 	{
 		j = 1;
-		if (argv[i][0])
+		if (argv[i][0] == '-')
 		{
 			while (argv[i][j] && argv[i][j] >= 'a' && argv[i][j] <= 'z')
 			{
